@@ -32,7 +32,7 @@ if (menu && navLinks) {
     });
 
 
-    /* Close menu after clicking a link */
+    /* Close mobile menu after clicking */
 
     document.querySelectorAll(".nav-links a").forEach(link => {
 
@@ -57,6 +57,8 @@ if (menu && navLinks) {
 const scrollTop = document.getElementById("scrollTop");
 
 window.addEventListener("scroll", () => {
+
+    if (!scrollTop) return;
 
     if (window.scrollY > 400) {
 
@@ -87,8 +89,12 @@ if (scrollTop) {
 
 /*==================== ACTIVE NAVIGATION ====================*/
 
-const sections = document.querySelectorAll("section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navItems =
+    document.querySelectorAll(".nav-links a");
+
 
 function updateActiveNav() {
 
@@ -97,17 +103,18 @@ function updateActiveNav() {
     sections.forEach(section => {
 
         const sectionTop =
-            section.offsetTop - 150;
+            section.offsetTop - 180;
 
-        const sectionHeight =
-            section.offsetHeight;
+        const sectionBottom =
+            sectionTop + section.offsetHeight;
 
         if (
             window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
+            window.scrollY < sectionBottom
         ) {
 
-            currentSection = section.getAttribute("id");
+            currentSection =
+                section.getAttribute("id");
 
         }
 
@@ -131,10 +138,13 @@ function updateActiveNav() {
 
 }
 
+
 window.addEventListener(
     "scroll",
     updateActiveNav
 );
+
+updateActiveNav();
 
 
 /*==================== HEADER SCROLL EFFECT ====================*/
@@ -142,46 +152,73 @@ window.addEventListener(
 const header =
     document.querySelector(".header");
 
-window.addEventListener("scroll", () => {
+
+function updateHeader() {
+
+    if (!header) return;
 
     if (window.scrollY > 50) {
 
         header.style.background =
-            "rgba(12, 9, 23, 0.90)";
+            "rgba(8, 11, 22, 0.94)";
+
+        header.style.borderBottom =
+            "1px solid rgba(139, 92, 246, 0.12)";
 
     } else {
 
         header.style.background =
-            "rgba(16, 13, 29, 0.72)";
+            "rgba(8, 11, 22, 0.78)";
+
+        header.style.borderBottom =
+            "1px solid rgba(148, 163, 184, 0.08)";
 
     }
 
-});
+}
 
 
-/*==================== SIMPLE TYPING EFFECT ====================*/
+window.addEventListener(
+    "scroll",
+    updateHeader
+);
+
+updateHeader();
+
+
+/*==================== TYPING EFFECT ====================*/
 
 const typingElement =
     document.querySelector(".typing");
 
+
 if (typingElement) {
 
     const roles = [
+
         "Python Full Stack Developer",
+
         "Django & FastAPI Developer",
+
         "Python Developer",
+
         "Data Analytics & ML Enthusiast"
+
     ];
 
+
     let roleIndex = 0;
+
     let characterIndex = 0;
 
     let deleting = false;
+
 
     function typeEffect() {
 
         const currentRole =
             roles[roleIndex];
+
 
         if (!deleting) {
 
@@ -193,6 +230,7 @@ if (typingElement) {
 
             characterIndex++;
 
+
             if (
                 characterIndex ===
                 currentRole.length
@@ -202,10 +240,11 @@ if (typingElement) {
 
                 setTimeout(
                     typeEffect,
-                    1800
+                    1700
                 );
 
                 return;
+
             }
 
         } else {
@@ -217,6 +256,7 @@ if (typingElement) {
                 );
 
             characterIndex--;
+
 
             if (characterIndex === 0) {
 
@@ -230,8 +270,10 @@ if (typingElement) {
 
         }
 
+
         const speed =
             deleting ? 45 : 75;
+
 
         setTimeout(
             typeEffect,
@@ -240,6 +282,7 @@ if (typingElement) {
 
     }
 
+
     typeEffect();
 
 }
@@ -247,52 +290,62 @@ if (typingElement) {
 
 /*==================== SCROLL REVEAL ====================*/
 
-const revealElements = document.querySelectorAll(
-    ".glass, .section-title, .stat-card"
-);
-
-const revealObserver =
-    new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "reveal-visible"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.10
-        }
+const revealElements =
+    document.querySelectorAll(
+        ".glass, .section-title, .stat-card"
     );
 
 
-revealElements.forEach(element => {
+if ("IntersectionObserver" in window) {
 
-    element.classList.add(
-        "reveal-element"
-    );
+    const revealObserver =
+        new IntersectionObserver(
 
-    revealObserver.observe(element);
+            (entries, observer) => {
 
-});
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "reveal-visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.10
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        element.classList.add(
+            "reveal-element"
+        );
+
+        revealObserver.observe(element);
+
+    });
+
+}
 
 
 /*==================== DYNAMIC YEAR ====================*/
 
 const footerYear =
     document.querySelector(".footer-bottom p");
+
 
 if (footerYear) {
 
@@ -305,40 +358,56 @@ if (footerYear) {
 }
 
 
-/*==================== PREVENT EMPTY # LINKS ====================*/
+/*==================== CLOSE MENU ON OUTSIDE CLICK ====================*/
 
-document.querySelectorAll('a[href="#"]').forEach(link => {
+document.addEventListener("click", event => {
 
-    link.addEventListener("click", event => {
+    if (!menu || !navLinks) return;
 
-        event.preventDefault();
+    const clickedInsideMenu =
+        menu.contains(event.target);
 
-    });
+    const clickedInsideNav =
+        navLinks.contains(event.target);
+
+
+    if (
+        !clickedInsideMenu &&
+        !clickedInsideNav &&
+        navLinks.classList.contains("active")
+    ) {
+
+        navLinks.classList.remove("active");
+
+        const icon =
+            menu.querySelector("i");
+
+        icon.classList.remove(
+            "ri-close-line"
+        );
+
+        icon.classList.add(
+            "ri-menu-3-line"
+        );
+
+    }
 
 });
 
 
+/*==================== PREVENT EMPTY # LINKS ====================*/
 
+document
+    .querySelectorAll('a[href="#"]')
+    .forEach(link => {
 
-/*==================== SCROLL REVEAL ====================*/
+        link.addEventListener(
+            "click",
+            event => {
 
-.reveal-element {
-    opacity: 0;
-    transform: translateY(25px);
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
+                event.preventDefault();
 
-.reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+            }
+        );
 
-.nav-links a.active {
-    color: #c084fc;
-}
-
-.nav-links a.active::after {
-    width: 100%;
-}
+    });
