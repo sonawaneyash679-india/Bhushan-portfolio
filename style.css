@@ -1,1775 +1,1514 @@
-/*==================================================
-    BHUSHANDEV PORTFOLIO
-    Professional Purple / Pink Glass UI
-==================================================*/
-
-/*==================== GOOGLE FONT ====================*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    background: #100d1d;
-    color: #f7f4ff;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-}
-
-
-/*==================== VARIABLES ====================*/
-
-:root {
-
-    --bg: #100d1d;
-    --bg-light: #171329;
-
-    --primary: #a855f7;
-    --primary-light: #c084fc;
-
-    --secondary: #ec4899;
-    --secondary-light: #f472b6;
-
-    --text: #f8f7fc;
-    --text-light: #b9b4c9;
-    --text-muted: #8f899f;
-
-    --border: rgba(255, 255, 255, 0.10);
-
-    --glass:
-        rgba(255, 255, 255, 0.055);
-
-    --glass-hover:
-        rgba(255, 255, 255, 0.085);
-
-    --shadow:
-        0 20px 60px rgba(0, 0, 0, 0.25);
-
-    --radius: 20px;
-
-    --transition: 0.35s ease;
-}
-
-
-/*==================== BACKGROUND ====================*/
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -5;
-
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(168, 85, 247, 0.10),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 30%,
-            rgba(236, 72, 153, 0.08),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #100d1d,
-            #151126,
-            #100d1d
-        );
-}
-
-.blur {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(100px);
-    pointer-events: none;
-    z-index: -3;
-    opacity: 0.35;
-}
-
-.blur1 {
-    width: 300px;
-    height: 300px;
-    background: #9333ea;
-    top: 5%;
-    left: -120px;
-}
+```html
+<!DOCTYPE html>
+<html lang="en">
 
-.blur2 {
-    width: 280px;
-    height: 280px;
-    background: #db2777;
-    top: 45%;
-    right: -120px;
-}
-
-.blur3 {
-    width: 250px;
-    height: 250px;
-    background: #7c3aed;
-    bottom: 5%;
-    left: 35%;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-/*==================== HEADER ====================*/
+    <title>Bhushan Sonawane | Python Full Stack Developer</title>
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+    <meta name="description"
+        content="Portfolio of Bhushan Sonawane - Python Full Stack Developer skilled in Python, Django, FastAPI, SQL, Machine Learning, Data Analytics and Power BI.">
 
-    background:
-        rgba(16, 13, 29, 0.72);
+    <meta name="keywords"
+        content="Bhushan Sonawane, Python Developer, Python Full Stack Developer, Django Developer, FastAPI Developer, SQL, Machine Learning, Power BI, Data Analytics">
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    <meta name="author" content="Bhushan Sonawane">
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.06);
-}
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-.navbar {
-    max-width: 1180px;
-    margin: auto;
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
 
-    height: 78px;
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
 
-    padding: 0 25px;
-}
+<body>
 
+    <!--==================== BACKGROUND ====================-->
 
-/*==================== LOGO ====================*/
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+    <div class="blur blur3"></div>
 
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.logo span {
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary-light),
-            var(--secondary-light)
-        );
 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+    <!--==================== NAVBAR ====================-->
 
+    <header class="header">
 
-/*==================== NAV LINKS ====================*/
+        <nav class="navbar">
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    list-style: none;
-}
+            <a href="#home" class="logo">
+                Bhushan<span>Dev</span>
+            </a>
 
-.nav-links a {
-    position: relative;
+            <ul class="nav-links">
 
-    color: var(--text-light);
+                <li><a href="#home">Home</a></li>
 
-    font-size: 14px;
-    font-weight: 500;
+                <li><a href="#about">About</a></li>
 
-    transition: var(--transition);
-}
+                <li><a href="#education">Education</a></li>
 
-.nav-links a::after {
-    content: "";
+                <li><a href="#skills">Skills</a></li>
 
-    position: absolute;
-    left: 0;
-    bottom: -7px;
+                <li><a href="#experience">Experience</a></li>
 
-    width: 0;
-    height: 2px;
+                <li><a href="#projects">Projects</a></li>
 
-    background:
-        linear-gradient(
-            90deg,
-            var(--primary),
-            var(--secondary)
-        );
+                <li><a href="#contact">Contact</a></li>
 
-    border-radius: 10px;
+            </ul>
 
-    transition: var(--transition);
-}
+            <div class="menu">
+                <i class="ri-menu-3-line"></i>
+            </div>
 
-.nav-links a:hover {
-    color: white;
-}
+        </nav>
 
-.nav-links a:hover::after {
-    width: 100%;
-}
+    </header>
 
 
-/*==================== MENU ====================*/
+    <!--==================== HERO ====================-->
 
-.menu {
-    display: none;
-    font-size: 25px;
-    cursor: pointer;
-}
+    <main>
 
+        <section class="hero" id="home">
 
-/*==================== COMMON SECTION ====================*/
+            <div class="hero-left">
 
-.section {
-    max-width: 1180px;
-    margin: auto;
-    padding: 100px 25px 30px;
-}
+                <p class="welcome">
+                    Hello, I'm
+                </p>
 
-.section-title {
-    text-align: center;
-    margin-bottom: 55px;
-}
+                <h1>
+                    Bhushan <span>Sonawane</span>
+                </h1>
 
-.section-title h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
+                <h3 class="typing">
+                    Python Full Stack Developer
+                </h3>
 
-.section-title span {
-    color: var(--primary-light);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
+                <p class="hero-text">
 
+                    Python Full Stack Developer with hands-on experience
+                    in Python, Django, FastAPI, SQL and web development.
+                    I also work with Machine Learning, Data Analytics and
+                    Power BI to build practical, data-driven applications.
 
-/*==================== GLASS ====================*/
+                </p>
 
-.glass {
-    background: var(--glass);
 
-    border: 1px solid var(--border);
+                <div class="hero-buttons">
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+                    <a href="#projects" class="btn1">
+                        View Projects
+                    </a>
 
-    box-shadow: var(--shadow);
+                    <a href="#contact" class="btn2">
+                        Get In Touch
+                    </a>
 
-    transition:
-        transform var(--transition),
-        border-color var(--transition),
-        background var(--transition);
-}
+                </div>
 
-.glass:hover {
-    background: var(--glass-hover);
 
-    border-color:
-        rgba(192, 132, 252, 0.25);
+                <!-- Social Links -->
 
-    transform: translateY(-5px);
-}
+                <div class="hero-social">
 
+                    <a href="https://github.com/sonawaneyash679-india"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub">
 
-/*==================== HERO ====================*/
+                        <i class="ri-github-fill"></i>
 
-.hero {
-    max-width: 1180px;
-    min-height: 100vh;
+                    </a>
 
-    margin: auto;
-    padding: 140px 25px 80px;
 
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+                    <!-- Correct LinkedIn URL -->
 
-    align-items: center;
-    gap: 60px;
-}
+                    <a href="https://www.linkedin.com/in/bhushan-sonawane/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn">
 
+                        <i class="ri-linkedin-box-fill"></i>
 
-/*==================== HERO LEFT ====================*/
+                    </a>
 
-.welcome {
-    color: var(--primary-light);
-    font-size: 15px;
-    font-weight: 600;
 
-    margin-bottom: 10px;
-}
+                    <a href="mailto:bhushans202223@gmail.com"
+                        aria-label="Email">
 
-.hero-left h1 {
-    font-size: clamp(42px, 6vw, 70px);
-    line-height: 1.08;
+                        <i class="ri-mail-line"></i>
 
-    font-weight: 700;
-    letter-spacing: -2px;
+                    </a>
 
-    margin-bottom: 18px;
-}
+                </div>
 
-.hero-left h1 span {
-    background:
-        linear-gradient(
-            135deg,
-            #c084fc,
-            #f472b6
-        );
+            </div>
 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
 
-.typing {
-    font-size: 22px;
-    font-weight: 600;
+            <!-- Profile -->
 
-    color: #ddd6fe;
+            <div class="hero-right">
 
-    margin-bottom: 20px;
-}
+                <div class="image-box">
 
-.hero-text {
-    max-width: 650px;
+                    <!-- Circle effect removed -->
 
-    color: var(--text-light);
+                    <img src="images/profile.jpg"
+                        alt="Bhushan Sonawane - Python Full Stack Developer">
 
-    font-size: 15px;
-    line-height: 1.9;
+                </div>
 
-    margin-bottom: 30px;
-}
+            </div>
 
+        </section>
 
-/*==================== BUTTONS ====================*/
 
-.hero-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+        <!--==================== ABOUT ====================-->
 
-.btn1,
-.btn2 {
-    display: inline-flex;
+        <section class="about section" id="about">
 
-    align-items: center;
-    justify-content: center;
+            <div class="section-title">
 
-    min-height: 48px;
+                <h2>About Me</h2>
 
-    padding: 0 24px;
+                <span>Professional Profile</span>
 
-    border-radius: 10px;
+            </div>
 
-    font-size: 14px;
-    font-weight: 600;
 
-    transition: var(--transition);
-}
+            <div class="about-container">
 
-.btn1 {
-    color: white;
+                <div class="about-card glass">
 
-    background:
-        linear-gradient(
-            135deg,
-            #9333ea,
-            #db2777
-        );
+                    <h3>Python Full Stack Developer</h3>
 
-    box-shadow:
-        0 10px 30px rgba(168, 85, 247, 0.20);
-}
+                    <p>
 
-.btn1:hover {
-    transform: translateY(-3px);
+                        I'm <strong>Bhushan Sonawane</strong>, a BCA graduate
+                        focused on Python Full Stack Development.
 
-    box-shadow:
-        0 14px 35px rgba(168, 85, 247, 0.30);
-}
+                        I have hands-on experience working with Python,
+                        Django, FastAPI, HTML, CSS, JavaScript, SQL and
+                        relational databases.
 
-.btn2 {
-    color: #e9d5ff;
+                        <br><br>
 
-    border: 1px solid
-        rgba(192, 132, 252, 0.35);
+                        Along with development, I have practical exposure to
+                        Machine Learning, Data Analytics and Power BI.
+                        I enjoy developing applications that solve practical
+                        problems and working across backend, database and
+                        data-related tasks.
 
-    background:
-        rgba(255, 255, 255, 0.04);
-}
+                    </p>
 
-.btn2:hover {
-    background:
-        rgba(168, 85, 247, 0.10);
+                </div>
 
-    border-color:
-        rgba(192, 132, 252, 0.60);
 
-    transform: translateY(-3px);
-}
+                <div class="about-card glass">
 
+                    <h3>Career Objective</h3>
 
-/*==================== HERO SOCIAL ====================*/
+                    <p>
 
-.hero-social {
-    display: flex;
-    gap: 12px;
+                        Looking for an entry-level opportunity in Python
+                        Full Stack Development where I can contribute to
+                        real-world projects, strengthen my backend and
+                        database development skills, and continue growing
+                        as a software professional.
 
-    margin-top: 28px;
-}
+                    </p>
 
-.hero-social a {
-    width: 42px;
-    height: 42px;
+                </div>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            </div>
 
-    border-radius: 50%;
+        </section>
 
-    color: var(--text-light);
 
-    border:
-        1px solid rgba(255, 255, 255, 0.10);
+        <!--==================== EDUCATION ====================-->
 
-    background:
-        rgba(255, 255, 255, 0.04);
+        <section class="education section" id="education">
 
-    transition: var(--transition);
-}
+            <div class="section-title">
 
-.hero-social a:hover {
-    color: white;
+                <h2>Education</h2>
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(168, 85, 247, 0.25),
-            rgba(236, 72, 153, 0.20)
-        );
+                <span>Academic Background</span>
 
-    border-color:
-        rgba(192, 132, 252, 0.35);
+            </div>
 
-    transform: translateY(-3px);
-}
 
+            <div class="timeline">
 
-/*==================== PROFILE IMAGE ====================*/
+                <div class="timeline-item glass">
 
-.hero-right {
-    display: flex;
-    justify-content: center;
-}
+                    <div class="timeline-icon">
 
-.image-box {
-    position: relative;
+                        <i class="ri-graduation-cap-fill"></i>
 
-    width: 360px;
-    height: 360px;
+                    </div>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.circle {
-    position: absolute;
+                    <div class="timeline-content">
 
-    width: 310px;
-    height: 310px;
+                        <h3>
+                            Bachelor of Computer Applications (BCA)
+                        </h3>
 
-    border-radius: 50%;
+                        <h4>
+                            Sandip University, Nashik
+                        </h4>
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(168, 85, 247, 0.35),
-            rgba(236, 72, 153, 0.30)
-        );
+                        <span>
+                            Completed
+                        </span>
 
-    filter: blur(1px);
+                        <p>
 
-    box-shadow:
-        0 0 80px rgba(168, 85, 247, 0.20);
-}
+                            Academic foundation in programming,
+                            database management, web development,
+                            software engineering and computer
+                            application development.
 
-.image-box img {
-    position: relative;
-    z-index: 2;
+                        </p>
 
-    width: 280px;
-    height: 280px;
+                    </div>
 
-    object-fit: cover;
+                </div>
 
-    border-radius: 50%;
+            </div>
 
-    border:
-        6px solid rgba(255, 255, 255, 0.08);
+        </section>
 
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.40);
-}
 
+        <!--==================== EXPERIENCE ====================-->
 
-/*==================== ABOUT ====================*/
+        <section class="experience section" id="experience">
 
-.about-container {
-    display: grid;
+            <div class="section-title">
 
-    grid-template-columns:
-        repeat(2, 1fr);
+                <h2>Experience</h2>
 
-    gap: 25px;
-}
+                <span>Professional Experience</span>
 
-.about-card {
-    padding: 32px;
+            </div>
 
-    border-radius: var(--radius);
-}
 
-.about-card h3 {
-    font-size: 21px;
-    margin-bottom: 15px;
+            <div class="timeline">
 
-    color: #f5edff;
-}
+                <div class="timeline-item glass">
 
-.about-card p {
-    color: var(--text-light);
+                    <div class="timeline-icon">
 
-    font-size: 14px;
-    line-height: 1.9;
-}
+                        <i class="ri-briefcase-fill"></i>
 
-.about-card strong {
-    color: var(--primary-light);
-}
+                    </div>
 
 
-/*==================== TIMELINE ====================*/
+                    <div class="timeline-content">
 
-.timeline {
-    max-width: 900px;
-    margin: auto;
-}
+                        <h3>
+                            AI / ML Intern
+                        </h3>
 
-.timeline-item {
-    display: flex;
+                        <h4>
+                            Sumago Infotech Pvt. Ltd.
+                        </h4>
 
-    gap: 25px;
+                        <span>
+                            6 Months Internship
+                        </span>
 
-    padding: 32px;
+                        <p>
 
-    border-radius: var(--radius);
-}
+                            Gained practical experience in Python,
+                            Machine Learning, data preprocessing,
+                            model development, SQL, FastAPI and
+                            application development.
 
-.timeline-icon {
-    min-width: 52px;
-    height: 52px;
+                            Worked on practical projects involving
+                            data processing, prediction systems,
+                            APIs and database integration.
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                        </p>
 
-    border-radius: 14px;
 
-    font-size: 23px;
+                        <div class="experience-tags">
 
-    color: #e9d5ff;
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>FastAPI</span>
+                            <span>SQL</span>
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(168, 85, 247, 0.20),
-            rgba(236, 72, 153, 0.15)
-        );
+                        </div>
 
-    border:
-        1px solid rgba(192, 132, 252, 0.18);
-}
+                    </div>
 
-.timeline-content h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
+                </div>
 
-.timeline-content h4 {
-    color: var(--primary-light);
+            </div>
 
-    font-size: 15px;
+        </section>
 
-    font-weight: 500;
 
-    margin-bottom: 5px;
-}
+        <!--==================== STATS ====================-->
 
-.timeline-content > span {
-    display: inline-block;
+        <section class="stats">
 
-    color: var(--text-muted);
+            <div class="stats-container">
 
-    font-size: 13px;
+                <div class="stat-card glass">
 
-    margin-bottom: 15px;
-}
+                    <h2>06</h2>
 
-.timeline-content p {
-    color: var(--text-light);
+                    <p>
+                        Months Internship
+                    </p>
 
-    font-size: 14px;
-    line-height: 1.8;
-}
+                </div>
 
 
-/*==================== EXPERIENCE TAGS ====================*/
+                <div class="stat-card glass">
 
-.experience-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+                    <h2>06+</h2>
 
-    margin-top: 18px;
-}
+                    <p>
+                        Portfolio Projects
+                    </p>
 
-.experience-tags span {
-    padding: 6px 12px;
+                </div>
 
-    border-radius: 20px;
 
-    font-size: 11px;
+                <div class="stat-card glass">
 
-    color: #ddd6fe;
+                    <h2>10+</h2>
 
-    background:
-        rgba(168, 85, 247, 0.09);
+                    <p>
+                        Technologies & Tools
+                    </p>
 
-    border:
-        1px solid rgba(168, 85, 247, 0.18);
-}
+                </div>
 
 
-/*==================== STATS ====================*/
+                <div class="stat-card glass">
 
-.stats {
-    max-width: 1180px;
+                    <h2>01</h2>
 
-    margin: 40px auto;
+                    <p>
+                        BCA Degree
+                    </p>
 
-    padding: 0 25px;
-}
+                </div>
 
-.stats-container {
-    display: grid;
+            </div>
 
-    grid-template-columns:
-        repeat(4, 1fr);
+        </section>
 
-    gap: 18px;
-}
 
-.stat-card {
-    text-align: center;
+        <!--==================== SKILLS ====================-->
 
-    padding: 28px 15px;
+        <section class="skills section" id="skills">
 
-    border-radius: 18px;
-}
+            <div class="section-title">
 
-.stat-card h2 {
-    font-size: 30px;
+                <h2>Technical Skills</h2>
 
-    background:
-        linear-gradient(
-            135deg,
-            #c084fc,
-            #f472b6
-        );
+                <span>
+                    Development • Data • Machine Learning
+                </span>
 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+            </div>
 
-.stat-card p {
-    color: var(--text-muted);
 
-    font-size: 13px;
-}
+            <div class="skills-container">
 
+                <!-- Development -->
 
-/*==================== SKILLS ====================*/
+                <div class="skills-box glass">
 
-.skills-container {
-    display: grid;
+                    <h3>
+                        Development Skills
+                    </h3>
 
-    grid-template-columns:
-        repeat(2, 1fr);
 
-    gap: 25px;
-}
+                    <div class="skill">
 
-.skills-box {
-    padding: 32px;
+                        <div class="skill-info">
+                            <span>Python</span>
+                        </div>
 
-    border-radius: var(--radius);
-}
+                        <div class="progress">
+                            <div class="progress-bar python"></div>
+                        </div>
 
-.skills-box h3 {
-    font-size: 20px;
+                    </div>
 
-    margin-bottom: 30px;
-}
 
+                    <div class="skill">
 
-/*==================== SKILL ====================*/
+                        <div class="skill-info">
+                            <span>Django</span>
+                        </div>
 
-.skill {
-    margin-bottom: 23px;
-}
+                        <div class="progress">
+                            <div class="progress-bar django"></div>
+                        </div>
 
-.skill:last-child {
-    margin-bottom: 0;
-}
+                    </div>
 
-.skill-info {
-    display: flex;
-    justify-content: space-between;
 
-    margin-bottom: 8px;
-}
+                    <div class="skill">
 
-.skill-info span {
-    color: var(--text-light);
+                        <div class="skill-info">
+                            <span>FastAPI</span>
+                        </div>
 
-    font-size: 13px;
-}
+                        <div class="progress">
+                            <div class="progress-bar fastapi"></div>
+                        </div>
 
-.progress {
-    height: 6px;
+                    </div>
 
-    overflow: hidden;
 
-    border-radius: 20px;
+                    <div class="skill">
 
-    background:
-        rgba(255, 255, 255, 0.07);
-}
+                        <div class="skill-info">
+                            <span>HTML / CSS / JavaScript</span>
+                        </div>
 
-.progress-bar {
-    height: 100%;
+                        <div class="progress">
+                            <div class="progress-bar web"></div>
+                        </div>
 
-    border-radius: 20px;
+                    </div>
 
-    background:
-        linear-gradient(
-            90deg,
-            #9333ea,
-            #ec4899
-        );
 
-    transform-origin: left;
+                    <div class="skill">
 
-    animation:
-        progressAnimation 1.5s ease forwards;
-}
+                        <div class="skill-info">
+                            <span>SQL & Databases</span>
+                        </div>
 
-.python {
-    width: 92%;
-}
+                        <div class="progress">
+                            <div class="progress-bar sql"></div>
+                        </div>
 
-.django {
-    width: 85%;
-}
+                    </div>
 
-.fastapi {
-    width: 82%;
-}
+                </div>
 
-.web {
-    width: 85%;
-}
 
-.sql {
-    width: 88%;
-}
+                <!-- Data & ML -->
 
-.ml {
-    width: 84%;
-}
+                <div class="skills-box glass">
 
-.analytics {
-    width: 82%;
-}
+                    <h3>
+                        Data & Machine Learning
+                    </h3>
 
-.powerbi {
-    width: 82%;
-}
 
-.pandas {
-    width: 84%;
-}
+                    <div class="skill">
 
-.sklearn {
-    width: 80%;
-}
+                        <div class="skill-info">
+                            <span>Machine Learning</span>
+                        </div>
 
-@keyframes progressAnimation {
-    from {
-        transform: scaleX(0);
-    }
+                        <div class="progress">
+                            <div class="progress-bar ml"></div>
+                        </div>
 
-    to {
-        transform: scaleX(1);
-    }
-}
+                    </div>
 
 
-/*==================== EXPERTISE ====================*/
+                    <div class="skill">
 
-.domain-grid {
-    display: grid;
+                        <div class="skill-info">
+                            <span>Data Analytics</span>
+                        </div>
 
-    grid-template-columns:
-        repeat(4, 1fr);
+                        <div class="progress">
+                            <div class="progress-bar analytics"></div>
+                        </div>
 
-    gap: 18px;
-}
+                    </div>
 
-.domain-card {
-    padding: 25px;
 
-    border-radius: 18px;
+                    <div class="skill">
 
-    text-align: center;
-}
+                        <div class="skill-info">
+                            <span>Power BI</span>
+                        </div>
 
-.domain-card i {
-    display: inline-flex;
+                        <div class="progress">
+                            <div class="progress-bar powerbi"></div>
+                        </div>
 
-    width: 48px;
-    height: 48px;
+                    </div>
 
-    align-items: center;
-    justify-content: center;
 
-    border-radius: 14px;
+                    <div class="skill">
 
-    color: #e9d5ff;
+                        <div class="skill-info">
+                            <span>Pandas & NumPy</span>
+                        </div>
 
-    font-size: 23px;
+                        <div class="progress">
+                            <div class="progress-bar pandas"></div>
+                        </div>
 
-    background:
-        rgba(168, 85, 247, 0.12);
+                    </div>
 
-    margin-bottom: 15px;
-}
 
-.domain-card h4 {
-    font-size: 15px;
+                    <div class="skill">
 
-    margin-bottom: 8px;
-}
+                        <div class="skill-info">
+                            <span>Scikit-Learn</span>
+                        </div>
 
-.domain-card p {
-    color: var(--text-muted);
+                        <div class="progress">
+                            <div class="progress-bar sklearn"></div>
+                        </div>
 
-    font-size: 12px;
+                    </div>
 
-    line-height: 1.6;
-}
+                </div>
 
+            </div>
 
-/*==================== TOOLS ====================*/
+        </section>
 
-.tools-grid {
-    display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+        <!--==================== EXPERTISE ====================-->
 
-    gap: 18px;
-}
+        <section class="expertise section">
 
-.tool-card {
-    min-height: 125px;
+            <div class="section-title">
 
-    border-radius: 18px;
+                <h2>Areas of Expertise</h2>
 
-    display: flex;
+                <span>What I Work With</span>
 
-    align-items: center;
-    justify-content: center;
+            </div>
 
-    flex-direction: column;
 
-    gap: 9px;
-}
+            <div class="domain-grid">
 
-.tool-card i {
-    font-size: 27px;
+                <div class="domain-card glass">
 
-    color: var(--primary-light);
-}
+                    <i class="ri-code-s-slash-line"></i>
 
-.tool-card h4 {
-    font-size: 13px;
+                    <h4>
+                        Python Development
+                    </h4>
 
-    font-weight: 500;
+                    <p>
+                        Python application and backend development.
+                    </p>
 
-    color: var(--text-light);
-}
+                </div>
 
 
-/*==================== HIGHLIGHTS ====================*/
+                <div class="domain-card glass">
 
-.certificate-container {
-    display: grid;
+                    <i class="ri-layout-4-line"></i>
 
-    grid-template-columns:
-        repeat(3, 1fr);
+                    <h4>
+                        Full Stack Development
+                    </h4>
 
-    gap: 22px;
-}
+                    <p>
+                        Frontend, backend and database integration.
+                    </p>
 
-.certificate {
-    padding: 32px;
+                </div>
 
-    border-radius: var(--radius);
 
-    text-align: center;
-}
+                <div class="domain-card glass">
 
-.certificate > i {
-    font-size: 34px;
+                    <i class="ri-server-line"></i>
 
-    color: var(--primary-light);
+                    <h4>
+                        Django & FastAPI
+                    </h4>
 
-    display: block;
+                    <p>
+                        Web applications and REST API development.
+                    </p>
 
-    margin-bottom: 18px;
-}
+                </div>
 
-.certificate h3 {
-    font-size: 18px;
 
-    margin-bottom: 12px;
-}
+                <div class="domain-card glass">
 
-.certificate p {
-    color: var(--text-light);
+                    <i class="ri-database-2-line"></i>
 
-    font-size: 13px;
+                    <h4>
+                        SQL & Databases
+                    </h4>
 
-    line-height: 1.8;
-}
+                    <p>
+                        Database design, queries and data handling.
+                    </p>
 
+                </div>
 
-/*==================== PROJECTS ====================*/
 
-.projects-container {
-    display: grid;
+                <div class="domain-card glass">
 
-    grid-template-columns:
-        repeat(3, 1fr);
+                    <i class="ri-brain-line"></i>
 
-    gap: 22px;
-}
+                    <h4>
+                        Machine Learning
+                    </h4>
 
-.project-card {
-    padding: 28px;
+                    <p>
+                        Data preprocessing, training and prediction.
+                    </p>
 
-    border-radius: var(--radius);
+                </div>
 
-    display: flex;
 
-    flex-direction: column;
-}
+                <div class="domain-card glass">
 
-.project-icon {
-    width: 52px;
-    height: 52px;
+                    <i class="ri-bar-chart-box-line"></i>
 
-    display: flex;
+                    <h4>
+                        Data Analytics
+                    </h4>
 
-    align-items: center;
-    justify-content: center;
+                    <p>
+                        Data analysis and visualization using Python.
+                    </p>
 
-    border-radius: 14px;
+                </div>
 
-    color: #e9d5ff;
 
-    font-size: 24px;
+                <div class="domain-card glass">
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(168, 85, 247, 0.17),
-            rgba(236, 72, 153, 0.10)
-        );
+                    <i class="ri-pie-chart-2-line"></i>
 
-    margin-bottom: 20px;
-}
+                    <h4>
+                        Power BI
+                    </h4>
 
-.project-card h3 {
-    font-size: 18px;
+                    <p>
+                        Interactive dashboards and business reporting.
+                    </p>
 
-    line-height: 1.4;
+                </div>
 
-    margin-bottom: 12px;
-}
 
-.project-card > p {
-    color: var(--text-light);
+                <div class="domain-card glass">
 
-    font-size: 13px;
+                    <i class="ri-git-branch-line"></i>
 
-    line-height: 1.8;
+                    <h4>
+                        Git & GitHub
+                    </h4>
 
-    margin-bottom: 20px;
-}
+                    <p>
+                        Version control and project collaboration.
+                    </p>
 
-.project-tech {
-    display: flex;
+                </div>
 
-    flex-wrap: wrap;
+            </div>
 
-    gap: 7px;
+        </section>
 
-    margin-bottom: 25px;
-}
 
-.project-tech span {
-    padding: 5px 10px;
+        <!--==================== TOOLS ====================-->
 
-    border-radius: 20px;
+        <section class="tools section" id="tools">
 
-    color: #d8b4fe;
+            <div class="section-title">
 
-    font-size: 10px;
+                <h2>Tools & Technologies</h2>
 
-    background:
-        rgba(168, 85, 247, 0.08);
+                <span>Technology Stack</span>
 
-    border:
-        1px solid rgba(168, 85, 247, 0.15);
-}
+            </div>
 
-.project-buttons {
-    display: flex;
 
-    gap: 10px;
+            <div class="tools-grid">
 
-    margin-top: auto;
-}
+                <div class="tool-card glass">
+                    <i class="ri-code-s-slash-line"></i>
+                    <h4>Python</h4>
+                </div>
 
-.project-btn {
-    flex: 1;
+                <div class="tool-card glass">
+                    <i class="ri-server-line"></i>
+                    <h4>Django</h4>
+                </div>
 
-    min-height: 40px;
+                <div class="tool-card glass">
+                    <i class="ri-flashlight-line"></i>
+                    <h4>FastAPI</h4>
+                </div>
 
-    display: flex;
+                <div class="tool-card glass">
+                    <i class="ri-html5-line"></i>
+                    <h4>HTML</h4>
+                </div>
 
-    align-items: center;
-    justify-content: center;
+                <div class="tool-card glass">
+                    <i class="ri-css3-line"></i>
+                    <h4>CSS</h4>
+                </div>
 
-    gap: 7px;
+                <div class="tool-card glass">
+                    <i class="ri-javascript-line"></i>
+                    <h4>JavaScript</h4>
+                </div>
 
-    border-radius: 8px;
+                <div class="tool-card glass">
+                    <i class="ri-database-2-line"></i>
+                    <h4>SQL</h4>
+                </div>
 
-    font-size: 12px;
+                <div class="tool-card glass">
+                    <i class="ri-database-line"></i>
+                    <h4>MySQL</h4>
+                </div>
 
-    color: var(--text-light);
+                <div class="tool-card glass">
+                    <i class="ri-bar-chart-box-line"></i>
+                    <h4>Power BI</h4>
+                </div>
 
-    border:
-        1px solid rgba(255, 255, 255, 0.09);
+                <div class="tool-card glass">
+                    <i class="ri-line-chart-line"></i>
+                    <h4>Pandas</h4>
+                </div>
 
-    background:
-        rgba(255, 255, 255, 0.035);
+                <div class="tool-card glass">
+                    <i class="ri-function-line"></i>
+                    <h4>NumPy</h4>
+                </div>
 
-    transition: var(--transition);
-}
+                <div class="tool-card glass">
+                    <i class="ri-cpu-line"></i>
+                    <h4>Scikit-Learn</h4>
+                </div>
 
-.project-btn:hover {
-    color: white;
+                <div class="tool-card glass">
+                    <i class="ri-book-open-line"></i>
+                    <h4>Jupyter</h4>
+                </div>
 
-    border-color:
-        rgba(192, 132, 252, 0.30);
+                <div class="tool-card glass">
+                    <i class="ri-code-box-line"></i>
+                    <h4>VS Code</h4>
+                </div>
 
-    background:
-        rgba(168, 85, 247, 0.10);
-}
+                <div class="tool-card glass">
+                    <i class="ri-git-branch-line"></i>
+                    <h4>Git</h4>
+                </div>
 
+                <div class="tool-card glass">
+                    <i class="ri-github-line"></i>
+                    <h4>GitHub</h4>
+                </div>
 
-/*==================== CONTACT ====================*/
+            </div>
 
-.contact-container {
-    display: grid;
+        </section>
 
-    grid-template-columns:
-        1fr 1fr;
 
-    gap: 25px;
-}
+        <!--==================== PROFESSIONAL HIGHLIGHTS ====================-->
 
-.contact-left,
-.contact-right {
-    padding: 32px;
+        <section class="certifications section">
 
-    border-radius: var(--radius);
-}
+            <div class="section-title">
 
-.contact-left h3,
-.contact-right h3 {
-    font-size: 21px;
+                <h2>Professional Highlights</h2>
 
-    margin-bottom: 12px;
-}
+                <span>Core Strengths</span>
 
-.contact-left > p,
-.contact-right > p {
-    color: var(--text-light);
+            </div>
 
-    font-size: 13px;
 
-    line-height: 1.8;
+            <div class="certificate-container">
 
-    margin-bottom: 25px;
-}
+                <div class="certificate glass">
 
+                    <i class="ri-code-box-line"></i>
 
-/*==================== CONTACT CARD ====================*/
+                    <h3>
+                        Python Full Stack Development
+                    </h3>
 
-.contact-card {
-    display: flex;
+                    <p>
 
-    align-items: center;
+                        Developing web applications using Python,
+                        Django, FastAPI, frontend technologies and
+                        relational databases.
 
-    gap: 15px;
+                    </p>
 
-    padding: 15px 0;
+                </div>
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.06);
-}
 
-.contact-card:last-child {
-    border-bottom: none;
-}
+                <div class="certificate glass">
 
-.contact-card > i {
-    width: 40px;
-    height: 40px;
+                    <i class="ri-brain-line"></i>
 
-    display: flex;
+                    <h3>
+                        Machine Learning
+                    </h3>
 
-    align-items: center;
-    justify-content: center;
+                    <p>
 
-    border-radius: 10px;
+                        Practical exposure to data preprocessing,
+                        model training, prediction and machine
+                        learning workflows.
 
-    color: var(--primary-light);
+                    </p>
 
-    background:
-        rgba(168, 85, 247, 0.10);
-}
+                </div>
 
-.contact-card h4 {
-    font-size: 12px;
 
-    color: var(--text-muted);
+                <div class="certificate glass">
 
-    font-weight: 500;
-}
+                    <i class="ri-bar-chart-box-line"></i>
 
-.contact-card p {
-    color: var(--text-light);
+                    <h3>
+                        Data Analytics & BI
+                    </h3>
 
-    font-size: 13px;
-}
+                    <p>
 
+                        Working with Python, SQL, Pandas,
+                        NumPy and Power BI for data analysis
+                        and interactive reporting.
 
-/*==================== SOCIAL BUTTONS ====================*/
+                    </p>
 
-.social-buttons {
-    display: flex;
+                </div>
 
-    flex-direction: column;
+            </div>
 
-    gap: 12px;
-}
+        </section>
 
-.social-btn {
-    min-height: 48px;
 
-    display: flex;
+        <!--==================== PROJECTS ====================-->
 
-    align-items: center;
+        <section class="projects section" id="projects">
 
-    gap: 12px;
+            <div class="section-title">
 
-    padding: 0 18px;
+                <h2>Featured Projects</h2>
 
-    border-radius: 10px;
+                <span>Selected Work</span>
 
-    color: var(--text-light);
+            </div>
 
-    font-size: 13px;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
+            <div class="projects-container">
 
-    background:
-        rgba(255, 255, 255, 0.035);
 
-    transition: var(--transition);
-}
+                <!-- Project 1 -->
 
-.social-btn i {
-    font-size: 19px;
+                <div class="project-card glass">
 
-    color: var(--primary-light);
-}
+                    <div class="project-icon">
+                        <i class="ri-building-4-line"></i>
+                    </div>
 
-.social-btn:hover {
-    color: white;
+                    <h3>
+                        Kumbh Mela Management System
+                    </h3>
 
-    background:
-        rgba(168, 85, 247, 0.09);
+                    <p>
 
-    border-color:
-        rgba(192, 132, 252, 0.25);
+                        Django-based web application designed for
+                        registration, database management, booking
+                        workflows and administrative operations.
 
-    transform: translateX(4px);
-}
+                    </p>
 
+                    <div class="project-tech">
 
-/*==================== CTA ====================*/
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>SQLite</span>
+                        <span>HTML/CSS</span>
 
-.cta {
-    max-width: 1180px;
+                    </div>
 
-    margin: 70px auto;
+                    <div class="project-buttons">
 
-    padding: 0 25px;
-}
+                        <a href="#" class="project-btn">
+                            <i class="ri-github-line"></i>
+                            GitHub
+                        </a>
 
-.cta-box {
-    padding: 55px 30px;
+                        <a href="#" class="project-btn">
+                            <i class="ri-external-link-line"></i>
+                            Details
+                        </a>
 
-    border-radius: 25px;
+                    </div>
 
-    text-align: center;
+                </div>
 
-    position: relative;
 
-    overflow: hidden;
-}
+                <!-- Project 2 -->
 
-.cta-box::before {
-    content: "";
+                <div class="project-card glass">
 
-    position: absolute;
+                    <div class="project-icon">
+                        <i class="ri-server-line"></i>
+                    </div>
 
-    width: 300px;
-    height: 300px;
+                    <h3>
+                        Medical Cost Prediction API
+                    </h3>
 
-    border-radius: 50%;
+                    <p>
 
-    background:
-        rgba(168, 85, 247, 0.10);
+                        Machine Learning prediction application
+                        deployed through FastAPI, allowing users
+                        to submit input data and receive predicted
+                        medical insurance costs.
 
-    filter: blur(70px);
+                    </p>
 
-    top: -150px;
-    left: 50%;
+                    <div class="project-tech">
 
-    transform: translateX(-50%);
-}
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>Scikit-Learn</span>
+                        <span>REST API</span>
 
-.cta-box h2 {
-    position: relative;
+                    </div>
 
-    font-size: 28px;
+                    <div class="project-buttons">
 
-    margin-bottom: 12px;
-}
+                        <a href="#" class="project-btn">
+                            <i class="ri-github-line"></i>
+                            GitHub
+                        </a>
 
-.cta-box p {
-    position: relative;
+                        <a href="#" class="project-btn">
+                            <i class="ri-external-link-line"></i>
+                            Demo
+                        </a>
 
-    max-width: 650px;
+                    </div>
 
-    margin: 0 auto 25px;
+                </div>
 
-    color: var(--text-light);
 
-    font-size: 14px;
-}
+                <!-- Project 3 -->
 
+                <div class="project-card glass">
 
-/*==================== FOOTER ====================*/
+                    <div class="project-icon">
+                        <i class="ri-mic-line"></i>
+                    </div>
 
-.footer {
-    margin-top: 80px;
+                    <h3>
+                        Voice Recognition System
+                    </h3>
 
-    padding: 55px 25px 20px;
+                    <p>
 
-    border-top:
-        1px solid rgba(255, 255, 255, 0.07);
+                        Deep Learning based voice recognition
+                        project using audio processing and
+                        MFCC features for voice classification.
 
-    background:
-        rgba(7, 5, 14, 0.45);
-}
+                    </p>
 
-.footer-container {
-    max-width: 1180px;
+                    <div class="project-tech">
 
-    margin: auto;
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>MFCC</span>
 
-    display: grid;
+                    </div>
 
-    grid-template-columns:
-        1.5fr 1fr 0.6fr;
+                    <div class="project-buttons">
 
-    gap: 40px;
+                        <a href="#" class="project-btn">
+                            <i class="ri-github-line"></i>
+                            GitHub
+                        </a>
 
-    align-items: center;
-}
+                        <a href="#" class="project-btn">
+                            <i class="ri-external-link-line"></i>
+                            Details
+                        </a>
 
-.footer-logo h2 {
-    font-size: 22px;
-}
+                    </div>
 
-.footer-logo h2 span {
-    background:
-        linear-gradient(
-            135deg,
-            #c084fc,
-            #f472b6
-        );
+                </div>
 
-    -webkit-background-clip: text;
-    background-clip: text;
 
-    color: transparent;
-}
+                <!-- Project 4 -->
 
-.footer-logo p {
-    color: var(--text-muted);
+                <div class="project-card glass">
 
-    font-size: 12px;
+                    <div class="project-icon">
+                        <i class="ri-bar-chart-2-line"></i>
+                    </div>
 
-    margin-top: 8px;
-}
+                    <h3>
+                        SuperStore Power BI Dashboard
+                    </h3>
 
-.footer-links {
-    display: flex;
+                    <p>
 
-    flex-wrap: wrap;
+                        Interactive business dashboard for sales,
+                        profit, quantity and performance analysis
+                        with dynamic visualizations and KPIs.
 
-    gap: 12px 20px;
-}
+                    </p>
 
-.footer-links a {
-    color: var(--text-muted);
+                    <div class="project-tech">
 
-    font-size: 12px;
+                        <span>Power BI</span>
+                        <span>DAX</span>
+                        <span>Power Query</span>
+                        <span>Excel</span>
 
-    transition: var(--transition);
-}
+                    </div>
 
-.footer-links a:hover {
-    color: var(--primary-light);
-}
+                    <div class="project-buttons">
 
-.footer-social {
-    display: flex;
+                        <a href="#" class="project-btn">
+                            <i class="ri-github-line"></i>
+                            GitHub
+                        </a>
 
-    justify-content: flex-end;
+                        <a href="#" class="project-btn">
+                            <i class="ri-eye-line"></i>
+                            Preview
+                        </a>
 
-    gap: 10px;
-}
+                    </div>
 
-.footer-social a {
-    width: 38px;
-    height: 38px;
+                </div>
 
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
+                <!-- Project 5 -->
 
-    border-radius: 50%;
+                <div class="project-card glass">
 
-    color: var(--text-light);
+                    <div class="project-icon">
+                        <i class="ri-database-2-line"></i>
+                    </div>
 
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
+                    <h3>
+                        SQL Data Analysis
+                    </h3>
 
-    transition: var(--transition);
-}
+                    <p>
 
-.footer-social a:hover {
-    color: white;
+                        SQL-based data analysis project covering
+                        joins, aggregate functions, filtering,
+                        views and analytical reporting.
 
-    background:
-        rgba(168, 85, 247, 0.12);
+                    </p>
 
-    transform: translateY(-3px);
-}
+                    <div class="project-tech">
 
-.footer-bottom {
-    max-width: 1180px;
+                        <span>SQL</span>
+                        <span>MySQL</span>
+                        <span>Database</span>
+                        <span>Analytics</span>
 
-    margin: 40px auto 0;
+                    </div>
 
-    padding-top: 20px;
+                    <div class="project-buttons">
 
-    text-align: center;
+                        <a href="#" class="project-btn">
+                            <i class="ri-github-line"></i>
+                            GitHub
+                        </a>
 
-    border-top:
-        1px solid rgba(255, 255, 255, 0.05);
-}
+                        <a href="#" class="project-btn">
+                            <i class="ri-folder-open-line"></i>
+                            Details
+                        </a>
 
-.footer-bottom p {
-    color: var(--text-muted);
+                    </div>
 
-    font-size: 11px;
-}
+                </div>
 
 
-/*==================== SCROLL TOP ====================*/
+                <!-- Project 6 -->
 
-#scrollTop {
-    position: fixed;
+                <div class="project-card glass">
 
-    right: 25px;
-    bottom: 25px;
+                    <div class="project-icon">
+                        <i class="ri-code-box-line"></i>
+                    </div>
 
-    width: 43px;
-    height: 43px;
+                    <h3>
+                        Developer Portfolio Website
+                    </h3>
 
-    border: none;
+                    <p>
 
-    border-radius: 12px;
+                        Responsive personal portfolio website
+                        designed to showcase development skills,
+                        projects, technical experience and
+                        professional profile.
 
-    display: flex;
+                    </p>
 
-    align-items: center;
-    justify-content: center;
+                    <div class="project-tech">
 
-    color: white;
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Responsive UI</span>
 
-    cursor: pointer;
+                    </div>
 
-    opacity: 0;
-    visibility: hidden;
+                    <div class="project-buttons">
 
-    transform: translateY(15px);
+                        <a href="#"
+                            class="project-btn">
 
-    background:
-        linear-gradient(
-            135deg,
-            #9333ea,
-            #db2777
-        );
+                            <i class="ri-github-line"></i>
+                            GitHub
 
-    box-shadow:
-        0 10px 30px rgba(168, 85, 247, 0.25);
+                        </a>
 
-    transition: var(--transition);
+                        <a href="#"
+                            class="project-btn">
 
-    z-index: 900;
-}
+                            <i class="ri-global-line"></i>
+                            Live
 
-#scrollTop.show {
-    opacity: 1;
-    visibility: visible;
+                        </a>
 
-    transform: translateY(0);
-}
+                    </div>
 
-#scrollTop:hover {
-    transform: translateY(-3px);
-}
+                </div>
 
+            </div>
 
-/*==================== RESPONSIVE ====================*/
+        </section>
 
-@media screen and (max-width: 1000px) {
 
-    .nav-links {
-        gap: 20px;
-    }
+        <!--==================== CONTACT ====================-->
 
-    .hero {
-        gap: 30px;
-    }
+        <section class="contact section" id="contact">
 
-    .domain-grid,
-    .tools-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
+            <div class="section-title">
 
-    .projects-container {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-}
+                <h2>Contact</h2>
 
+                <span>Let's Connect</span>
 
-@media screen and (max-width: 768px) {
+            </div>
 
-    .navbar {
-        height: 70px;
-    }
 
-    .menu {
-        display: block;
-    }
+            <div class="contact-container">
 
-    .nav-links {
-        position: absolute;
 
-        top: 70px;
-        left: 20px;
-        right: 20px;
+                <!-- Contact Information -->
 
-        display: flex;
+                <div class="contact-left glass">
 
-        flex-direction: column;
+                    <h3>
+                        Get In Touch
+                    </h3>
 
-        align-items: flex-start;
+                    <p>
 
-        gap: 0;
+                        Open to entry-level opportunities,
+                        internships, Python development projects,
+                        data analytics and software development roles.
 
-        padding: 15px;
+                    </p>
 
-        border-radius: 15px;
 
-        background:
-            rgba(20, 16, 36, 0.96);
+                    <div class="contact-card">
 
-        border:
-            1px solid rgba(255, 255, 255, 0.08);
+                        <i class="ri-mail-line"></i>
 
-        backdrop-filter: blur(20px);
+                        <div>
 
-        opacity: 0;
-        visibility: hidden;
+                            <h4>Email</h4>
 
-        transform: translateY(-10px);
+                            <p>
+                                bhushans202223@gmail.com
+                            </p>
 
-        transition: var(--transition);
-    }
+                        </div>
 
-    .nav-links.active {
-        opacity: 1;
-        visibility: visible;
+                    </div>
 
-        transform: translateY(0);
-    }
 
-    .nav-links li {
-        width: 100%;
-    }
+                    <div class="contact-card">
 
-    .nav-links a {
-        display: block;
+                        <i class="ri-phone-line"></i>
 
-        padding: 13px 10px;
+                        <div>
 
-        width: 100%;
-    }
+                            <h4>Phone</h4>
 
-    .hero {
-        grid-template-columns: 1fr;
+                            <p>
+                                +91 7821074445
+                            </p>
 
-        text-align: center;
+                        </div>
 
-        padding-top: 130px;
-    }
+                    </div>
 
-    .hero-left {
-        display: flex;
 
-        flex-direction: column;
+                    <div class="contact-card">
 
-        align-items: center;
-    }
+                        <i class="ri-map-pin-line"></i>
 
-    .hero-text {
-        max-width: 600px;
-    }
+                        <div>
 
-    .hero-social {
-        justify-content: center;
-    }
+                            <h4>Location</h4>
 
-    .hero-right {
-        order: -1;
-    }
+                            <p>
+                                Nashik, Maharashtra, India
+                            </p>
 
-    .image-box {
-        width: 280px;
-        height: 280px;
-    }
+                        </div>
 
-    .circle {
-        width: 240px;
-        height: 240px;
-    }
+                    </div>
 
-    .image-box img {
-        width: 215px;
-        height: 215px;
-    }
+                </div>
 
-    .about-container,
-    .skills-container,
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
 
-    .stats-container {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
+                <!-- Social -->
 
-    .certificate-container {
-        grid-template-columns: 1fr;
-    }
+                <div class="contact-right glass">
 
-    .footer-container {
-        grid-template-columns: 1fr;
+                    <h3>
+                        Connect With Me
+                    </h3>
 
-        text-align: center;
-    }
+                    <p>
 
-    .footer-links {
-        justify-content: center;
-    }
+                        Feel free to connect with me for
+                        professional opportunities and
+                        collaboration.
 
-    .footer-social {
-        justify-content: center;
-    }
-}
+                    </p>
 
 
-@media screen and (max-width: 560px) {
+                    <div class="social-buttons">
 
-    .section {
-        padding: 80px 18px 20px;
-    }
 
-    .hero {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
+                        <!-- GitHub -->
 
-    .hero-left h1 {
-        font-size: 43px;
+                        <a href="https://github.com/sonawaneyash679-india"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-btn">
 
-        letter-spacing: -1.5px;
-    }
+                            <i class="ri-github-line"></i>
 
-    .typing {
-        font-size: 18px;
-    }
+                            GitHub
 
-    .hero-text {
-        font-size: 13px;
-    }
+                        </a>
 
-    .section-title h2 {
-        font-size: 29px;
-    }
 
-    .timeline-item {
-        flex-direction: column;
+                        <!-- LinkedIn - FIXED -->
 
-        padding: 25px;
-    }
+                        <a href="https://www.linkedin.com/in/bhushan-sonawane/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-btn">
 
-    .stats {
-        padding: 0 18px;
-    }
+                            <i class="ri-linkedin-box-line"></i>
 
-    .stats-container {
-        grid-template-columns: 1fr 1fr;
-    }
+                            LinkedIn
 
-    .domain-grid,
-    .tools-grid,
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
+                        </a>
 
-    .skills-box,
-    .about-card,
-    .contact-left,
-    .contact-right {
-        padding: 25px;
-    }
 
-    .cta {
-        padding: 0 18px;
-    }
+                        <!-- Email -->
 
-    .cta-box {
-        padding: 40px 20px;
-    }
+                        <a href="mailto:bhushans202223@gmail.com"
+                            class="social-btn">
 
-    .cta-box h2 {
-        font-size: 23px;
-    }
+                            <i class="ri-mail-line"></i>
 
-    #scrollTop {
-        right: 18px;
-        bottom: 18px;
-    }
-}
+                            Email Me
 
+                        </a>
 
-/*==================== ACCESSIBILITY ====================*/
 
-a:focus-visible,
-button:focus-visible {
-    outline: 2px solid var(--primary-light);
-    outline-offset: 4px;
-}
+                        <!-- Resume -->
+
+                        <a href="resume.pdf"
+                            download
+                            class="social-btn">
+
+                            <i class="ri-download-line"></i>
+
+                            Download Resume
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--==================== CTA ====================-->
+
+        <section class="cta">
+
+            <div class="cta-box glass">
+
+                <h2>
+                    Let's Build Something Together
+                </h2>
+
+                <p>
+
+                    Interested in Python Full Stack Development,
+                    Machine Learning, Data Analytics or
+                    backend development?
+
+                </p>
+
+
+                <a href="#contact" class="btn1">
+                    Get In Touch
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!--==================== FOOTER ====================-->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-logo">
+
+                <h2>
+                    Bhushan<span>Dev</span>
+                </h2>
+
+                <p>
+
+                    Python Full Stack Developer
+                    • Machine Learning
+                    • Data Analytics
+                    • Power BI
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#about">About</a>
+
+                <a href="#education">Education</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#experience">Experience</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-social">
+
+                <a href="https://github.com/sonawaneyash679-india"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub">
+
+                    <i class="ri-github-line"></i>
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/in/bhushan-sonawane/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+
+                    <i class="ri-linkedin-box-line"></i>
+
+                </a>
+
+
+                <a href="mailto:bhushans202223@gmail.com"
+                    aria-label="Email">
+
+                    <i class="ri-mail-line"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Bhushan Sonawane. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!--==================== SCROLL TOP ====================-->
+
+    <button id="scrollTop" aria-label="Scroll to top">
+
+        <i class="ri-arrow-up-line"></i>
+
+    </button>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
